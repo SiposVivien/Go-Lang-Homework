@@ -1,0 +1,15 @@
+~Egy kis webszolgáltatást kell megvalósítanod, amely képes egy felhasználó által megadott Unix időbélyeget (*time.Time) memóriában tárolni.
+
+~A szolgáltatásnak két végponttal kell rendelkeznie: egy a timestamp elmentésére, és egy másik annak lekérésére.
+
+~A szolgáltatás oldalán kizárólag a text/plain tartalomtípus megengedett, mind bejövő, mind kimenő kommunikáció során.
+
+~A szolgáltatásnak kezelnie kell az adatversenyeket (amikor egyszerre történik olvasás és írás a timestampen), de mutex használata nem engedélyezett. Más módot kell találnod a konkurens események kezelésére.
+
+~Ugyanabban a folyamatban, ahol a szolgáltatás fut, implementáld a kliens oldalt is, amely először elment egy időbélyeget, majd visszaolvassa azt.
+
+~Az alkalmazás egyetlen kimenete a szabványos kimenetre (normál esetben) az a timestamp legyen, amelyet a második lépésben olvasott vissza.
+
+~A feladat eredményeként két forrásfájlt kell benyújtani: main.go és main_test.go. Az alkalmazásnak a go run main.go paranccsal kell futtathatónak lennie.
+
+~A tesztlefedettségnek legalább 2%-ot kell elérnie, de legfeljebb 100% lehet.
